@@ -4,7 +4,7 @@
 #
 Name     : mvn-validation-api
 Version  : 1.1.0.final
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
 Source0  : https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
 Source1  : https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
@@ -30,10 +30,10 @@ data components for the mvn-validation-api package.
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
 
 
 %files
