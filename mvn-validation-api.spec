@@ -4,10 +4,14 @@
 #
 Name     : mvn-validation-api
 Version  : 1.1.0.final
-Release  : 2
+Release  : 3
 URL      : https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
 Source0  : https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
-Source1  : https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+Source1  : https://repo1.maven.org/maven2/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar
+Source2  : https://repo1.maven.org/maven2/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.pom
+Source3  : https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+Source4  : https://repo1.maven.org/maven2/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final.jar
+Source5  : https://repo1.maven.org/maven2/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -25,6 +29,7 @@ data components for the mvn-validation-api package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
@@ -32,8 +37,20 @@ data components for the mvn-validation-api package.
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final
 cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.0.0.GA
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.0.0.GA
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/2.0.0.Final
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/2.0.0.Final
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final.pom
 
 
 %files
@@ -41,5 +58,9 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/validation/valida
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar
+/usr/share/java/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.pom
 /usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
 /usr/share/java/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+/usr/share/java/.m2/repository/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final.jar
+/usr/share/java/.m2/repository/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final.pom
